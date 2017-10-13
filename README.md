@@ -1,8 +1,11 @@
 SimpleStore.js
 
-SimpleStore.js is a dead simple state manager for JavaScript and Node. It's intended
-to be isomorphic, discreet, and there for you in a pinch when more robust state managers
-like Redux are too much for the project.
+SimpleStore.js is a dead simple state manager for JavaScript and Node. It's
+intended to be isomorphic, discreet, and there for you in a pinch when more
+robust state managers like Redux are too much for the project.
+
+The best part? It's only 3.9kb (< 2kb gzipped). So you can safely include it in
+almost any context without exploding page sizes.
 
 # API
 
@@ -53,5 +56,17 @@ myState.set('myKey', "Hello world")     // -> Watcher is on!
 
 myState.unWatch('myWatcher')
 
-myState.set('myKey', "Foo bar!")        // ->
+myState.set('myKey', "Foo bar!")        // -> (Outputs nothing)
+```
+
+## Multiple State Objects
+
+Although it's not recommended, you can setup multiple state objects.
+
+```
+    const firstStore = createStore({ a: 1 }),
+          secondStore = creteStore({ a: 2 })
+    
+    console.log(firstStore.get('a'))        // -> 1
+    console.log(secondStore.get('a'))       // -> 2
 ```
