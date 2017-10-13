@@ -2,7 +2,7 @@
   "name": "simple-store-js",
   "version": "0.1.4",
   "description": "Simple State Management: isomorphic, slim, quick",
-  "main": "index.js",
+  "main": "lib/simple.store.js",
   "dependencies": {
     "deep-equal": "^1.0.1"
   },
