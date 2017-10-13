@@ -63,7 +63,7 @@ myState.set('myKey', "Foo bar!")        // -> (Outputs nothing)
 
 Although it's not recommended, you can setup multiple state objects.
 
-```
+```js
     const firstStore = createStore({ a: 1 }),
           secondStore = creteStore({ a: 2 })
     
