@@ -1,6 +1,6 @@
 {
   "name": "simple-store-js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Simple State Management: isomorphic, slim, quick",
   "main": "index.js",
   "dependencies": {
