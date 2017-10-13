@@ -1,4 +1,4 @@
-import createStore from "../lib/simple.store.js"
+import createStore from "./index.js"
 
 test('creates a store', () => {
     const store = createStore()
