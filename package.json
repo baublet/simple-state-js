@@ -1,11 +1,16 @@
 {
   "name": "simple-store-js",
-  "version": "0.1.0",
-  "description": "Simple state management",
+  "version": "0.1.1",
+  "description": "Simple State Management: isomorphic, slim, quick",
   "main": "index.js",
   "dependencies": {
     "deep-equal": "^1.0.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baublet/simple-state-js.git"
+  },
+  "homepage": "https://github.com/baublet/simple-state-js",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -15,7 +20,10 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "release:major": "npm run build && npm version major && npm publish",
+    "release:minor": "npm run build && npm version minor && npm publish",
+    "release:patch": "npm run build && npm version patch && npm publish"
   },
   "babel": {
     "presets": "env"
