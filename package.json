@@ -7,11 +7,15 @@
     "deep-equal": "^1.0.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
-    "jest": "^21.2.1"
+    "jest": "^21.2.1",
+    "webpack": "^3.7.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack --config webpack.config.js"
   },
   "babel": {
     "presets": "env"

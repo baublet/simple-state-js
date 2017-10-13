@@ -11,12 +11,14 @@
 <button onclick="increment()">+</button>
 <button onclick="decrement()">-</button>
 
-<script type="text/javascript" src="/simple-store-js/dist/simple.store.js"></script>
+<script type="text/javascript" src="/simple-store-js/lib/simple.store.js"></script>
 <script type="text/javascript">
-    var counter = document.getElementById('countervalue')
-    document.store = document.SimpleStore(counter.innerHTML)
+    var counterElement = document.getElementById('countervalue')
+    document.store = document.SimpleStore({
+        counter: parseInt(counterElement.innerHTML, 10)
+    })
     document.store.watch('counter', function(val) {
-        counter.innerHTML = parseInt(val, 10)
+        counterElement.innerHTML = parseInt(val, 10)
     })
     document.store.set('counter', 0)
     function increment() {

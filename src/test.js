@@ -1,4 +1,4 @@
-import createStore from "./"
+import createStore from "../lib/simple.store.js"
 
 test('creates a store', () => {
     const store = createStore()
@@ -57,4 +57,15 @@ test('watchers can be fully unwatched', () => {
     expect(store._watchers['myKey'].length).toBe(3)
     store.unwatch('myKey')
     expect(store._watchers['myKey'].length).toBe(0)
+})
+
+test('basic counter', () => {
+    let counterValue = 0
+    const store = createStore({ counter: counterValue })
+    store.watch('counter', newValue => counterValue = newValue)
+    expect(store.get('counter')).toBe(counterValue)
+    store.set('counter', store.get('counter') + 1)
+    expect(store.get('counter')).toBe(counterValue)
+    store.set('counter', store.get('counter') - 1)
+    expect(store.get('counter')).toBe(counterValue)
 })

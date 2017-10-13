@@ -1,6 +1,6 @@
 import deepEqual from "deep-equal"
 
-const createStore = module.exports = function (initialState = {})
+const createStore = function (initialState = {})
 {
     return {
         // Our actual state object. Do not mutate state directly!!
@@ -78,3 +78,5 @@ const createStore = module.exports = function (initialState = {})
 if(document) {
     document.SimpleStore = createStore
 }
+
+export default createStore
