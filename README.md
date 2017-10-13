@@ -54,7 +54,7 @@ myState.watch('myKey', newState => {
 
 myState.set('myKey', "Hello world")     // -> Watcher is on!
 
-myState.unWatch('myWatcher')
+myState.unwatch('myKey', 'myWatcher')
 
 myState.set('myKey', "Foo bar!")        // -> (Outputs nothing)
 ```
