@@ -1,0 +1,29 @@
+{
+  "name": "simple-store-js",
+  "version": "0.1.0",
+  "description": "Simple state management",
+  "main": "index.js",
+  "dependencies": {
+    "deep-equal": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "jest": "^21.2.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "babel": {
+    "presets": "env"
+  },
+  "keywords": [
+    "state",
+    "data",
+    "bind",
+    "data-bind",
+    "binding",
+    "data-binding"
+  ],
+  "author": "Ryan M. Poe",
+  "license": "ISC"
+}

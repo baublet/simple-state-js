@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>SimpleStore.js</title>
+</head>
+<body>
+
+<div id="countervalue">0</div>
+<button onclick="increment()">+</button>
+<button onclick="decrement()">-</button>
+
+<script type="text/javascript" src="/simple-store-js/dist/simple.store.js"></script>
+<script type="text/javascript">
+    var counter = document.getElementById('countervalue')
+    document.store = document.SimpleStore(counter.innerHTML)
+    document.store.watch('counter', function(val) {
+        counter.innerHTML = parseInt(val, 10)
+    })
+    document.store.set('counter', 0)
+    function increment() {
+        console.log(document.store.get('counter'))
+        document.store.set('counter', document.store.get('counter') + 1)
+    }
+    function decrement() {
+        document.store.set('counter', document.store.get('counter') - 1)
+    }
+</script>
+
+</body>
+</html>
