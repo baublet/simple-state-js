@@ -4,8 +4,8 @@ SimpleStore.js is a dead simple state manager for JavaScript and Node. It's
 intended to be isomorphic, discreet, and there for you in a pinch when more
 robust state managers like Redux are too much for the project.
 
-The best part? It's only 3.9kb (< 2kb gzipped). So you can safely include it in
-almost any context without exploding page sizes.
+The best part? It's only 3.9kb (< 1.3kb gzipped). So you can safely include it
+in almost any context without exploding page sizes.
 
 # API
 
@@ -18,19 +18,28 @@ import createStore from "simple-state-js"
 
 const myState = createStore()
 
-// Optional, if you're in the browser
+// Optional, if you're in the browser. Once you set it, you can use your state
+// manager anywhere. Just use document.appState.get/set/watch, etc.
 document.appState = myState
+
+
 
 // To set a node
 myState.set('myKey', "Hello, sir!")
 
+
+
 // To get that node
 console.log(myState.get('myKey'))   // -> Hello, sir!
+
+
 
 // To watch a node for changes
 myState.watch('myKey', (newState, oldState) => {
     console.log(newState)
 })
+
+
 
 myState.set('myKey', "Foo bar.")    // -> Foo bar.
 ```
@@ -69,4 +78,23 @@ Although it's not recommended, you can setup multiple state objects.
     
     console.log(firstStore.get('a'))        // -> 1
     console.log(secondStore.get('a'))       // -> 2
+```
+
+## Contributing
+
+Find bugs? Want to add a new feature? I accept pull requests that live up to
+SimpleStore.js' values:
+
+- Simple -- features must not add unnecessary complexity and bloat
+- Discreet -- use outside dependencies sparingly, and only slim, well-designed ones
+- Isomorphic -- nothing will be accepted that is not isomorphic
+- Small -- This module will never be more than 1.5kb gzipped and uglified
+  - To measure the change to the end file size of your branch, use the [http://closure-compiler.appspot.com/home](Clojure Compiler on default settings)
+
+### Testing
+
+```
+    git clone https://github.com/baublet/simple-state-js.git
+    npm install
+    npm test
 ```
