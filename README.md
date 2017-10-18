@@ -89,7 +89,7 @@ SimpleStore.js' values:
 - Discreet -- use outside dependencies sparingly, and only slim, well-designed ones
 - Isomorphic -- nothing will be accepted that is not isomorphic
 - Small -- This module will never be more than 1.5kb gzipped and uglified
-  - To measure the change to the end file size of your branch, use the [http://closure-compiler.appspot.com/home](Clojure Compiler on default settings)
+  - To measure the change to the end file size of your branch, use the [Clojure Compiler on default settings](http://closure-compiler.appspot.com/home)
 
 ### Testing
 
