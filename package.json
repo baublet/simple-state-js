@@ -1,6 +1,6 @@
 {
   "name": "simple-store-js",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Simple State Management: isomorphic, slim, quick",
   "main": "lib/simple.store.js",
   "dependencies": {
