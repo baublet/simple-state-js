@@ -44,7 +44,7 @@ myState.watch('myKey', (newState, oldState) => {
 myState.set('myKey', "Foo bar.")    // -> Foo bar.
 ```
 
-SimpleStore.js relies on `node-deep-equal` to compare objects that are passed in
+SimpleStore.js relies on `fast-deep-equal` to compare objects that are passed in
 as key values to decide when to update the state and watchers. Therefore, if your
 state key is a fairly large object and you need to fully replace it (e.g., from
 an API request), you can safely do so without having to worry about everything

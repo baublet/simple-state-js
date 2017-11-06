@@ -1,4 +1,4 @@
-import deepEqual from "deep-equal"
+import deepEqual from "fast-deep-equal"
 
 const createStore = function (initialState = {})
 {
@@ -33,23 +33,22 @@ const createStore = function (initialState = {})
         },
 
         // Set a piece of state
-        set(element, value)
+        set(element, newValue)
         {
-            const   oldState = typeof this._store[element] == "object" ?
+            const   oldValue = typeof this._store[element] == "object" ?
                                 Object.assign({}, this._store[element]) :
                                 this._store[element],
-                    equal = deepEqual(oldState, value),
-                    newState = value
+                    equal = deepEqual(oldValue, newValue)
 
             if(!equal) {
                 // Set the new state
-                this._store[element] = newState
+                this._store[element] = newValue
                 
                 // Load up watchers, if there are any
                 if(this._watchers[element]) {
                     this._watchers[element].forEach(watcher => {
                         const fn = watcher[1]
-                        fn(newState, oldState)
+                        fn(newValue, oldValue)
                     })
                 }
             }
@@ -65,7 +64,7 @@ const createStore = function (initialState = {})
         },
 
         // De-register a watcher on an element. If you don't pass in an ID, it
-        // removes all watchers.
+        // removes all watchers from that key.
         unwatch(element, id = false)
         {
             this._watchers[element] = id !== false ?

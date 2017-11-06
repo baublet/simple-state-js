@@ -4,7 +4,7 @@
   "description": "Simple State Management: isomorphic, slim, quick",
   "main": "lib/simple.store.js",
   "dependencies": {
-    "deep-equal": "^1.0.1"
+    "fast-deep-equal": "^1.0.0"
   },
   "repository": {
     "type": "git",
