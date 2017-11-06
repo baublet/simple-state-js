@@ -4,7 +4,7 @@ SimpleStore.js is a dead simple state manager for JavaScript and Node. It's
 intended to be isomorphic, discreet, and there for you in a pinch when more
 robust state managers like Redux are too much for the project.
 
-The best part? It's only 3kb (< 1kb gzipped). So you can safely include it
+The best part? It's only 2.75kb (< 1kb gzipped). So you can safely include it
 in almost any context without exploding page sizes.
 
 # API
