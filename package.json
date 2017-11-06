@@ -21,9 +21,9 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --config webpack.config.js",
-    "release:major": "npm run build && git commit -a -m \"Increment and release major\" && npm version major && npm publish",
-    "release:minor": "npm run build && git commit -a -m \"Increment and release minor\" && npm version minor && npm publish",
-    "release:patch": "npm run build && git commit -a -m \"Increment and release patch\" && npm version patch && npm publish"
+    "release:major": "npm run build && git commit -a -m \"Increment and release major\" && npm version major && npm publish && git push",
+    "release:minor": "npm run build && git commit -a -m \"Increment and release minor\" && npm version minor && npm publish && git push",
+    "release:patch": "npm run build && git commit -a -m \"Increment and release patch\" && npm version patch && npm publish && git push"
   },
   "babel": {
     "presets": "env"
