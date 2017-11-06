@@ -27,7 +27,7 @@ const createStore = function (initialState = {})
         {
             if(typeof this._store[element] == "object")
             {
-                return Object.assign({}, this._store[element])
+                return this._store[element]
             }
             return this._store[element]
         },
@@ -35,9 +35,7 @@ const createStore = function (initialState = {})
         // Set a piece of state
         set(element, newValue)
         {
-            const   oldValue = typeof this._store[element] == "object" ?
-                                Object.assign({}, this._store[element]) :
-                                this._store[element],
+            const   oldValue = this._store[element],
                     equal = deepEqual(oldValue, newValue)
 
             if(!equal) {

@@ -69,3 +69,12 @@ test('basic counter', () => {
     store.set('counter', store.get('counter') - 1)
     expect(store.get('counter')).toBe(counterValue)
 })
+
+test('arrays don\'t turn into objects', () => {
+    const store = createStore()
+    store.set('array', [1, 2, { a: 1, b: 2 }])
+    store.watch('array', newValue => {
+        expect(1).toBe(2)
+    })
+    store.set('array', [1, 2, { a: 1, b: 2 }])
+})
