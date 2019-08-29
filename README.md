@@ -74,7 +74,7 @@ Although it's not recommended, you can setup multiple state objects.
 
 ```js
     const firstStore = createStore({ a: 1 }),
-          secondStore = creteStore({ a: 2 })
+          secondStore = createStore({ a: 2 })
     
     console.log(firstStore.get('a'))        // -> 1
     console.log(secondStore.get('a'))       // -> 2
